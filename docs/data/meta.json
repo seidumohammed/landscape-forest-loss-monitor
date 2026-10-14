@@ -1,0 +1,9 @@
+{
+  "source": "Hansen/UMD/Google/USGS/NASA GFC-2024-v1.12",
+  "canopy_min_percent": 30,
+  "years": [
+    2001,
+    2024
+  ],
+  "boundaries": "geoBoundaries gbOpen (CC BY-SA)"
+}

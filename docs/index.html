@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tree Cover Loss Monitor: Ghana, Côte d'Ivoire, Cameroon</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Tree Cover Loss Monitor</h1>
+    <p>Annual tree cover loss, 2001 to 2024, by region and district in Ghana, Côte d'Ivoire and Cameroon.
+       A screening view of satellite data, not a measure of deforestation.</p>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Filters">
+      <label>Level
+        <select id="level">
+          <option value="regions">Regions</option>
+          <option value="districts">Districts</option>
+        </select>
+      </label>
+      <label>Country
+        <select id="country">
+          <option value="ALL">All three</option>
+          <option value="GHA">Ghana</option>
+          <option value="CIV">Côte d'Ivoire</option>
+          <option value="CMR">Cameroon</option>
+        </select>
+      </label>
+      <label>From
+        <select id="from"></select>
+      </label>
+      <label>To
+        <select id="to"></select>
+      </label>
+      <label>Show
+        <select id="metric">
+          <option value="pct">Share of 2000 forest lost (%)</option>
+          <option value="ha">Loss (hectares)</option>
+        </select>
+      </label>
+    </section>
+
+    <div id="map" role="img" aria-label="Map of tree cover loss"></div>
+
+    <aside class="panel" aria-live="polite">
+      <div class="cards" id="cards"></div>
+      <h2 id="chart-title">Annual loss</h2>
+      <div id="chart"></div>
+      <h2 id="detail-title">Top areas</h2>
+      <div id="detail"></div>
+    </aside>
+  </main>
+
+  <footer>
+    <div id="legend"></div>
+    <p>
+      Data: Hansen/UMD/Google/USGS/NASA Global Forest Change v1.12 (2000 to 2024). Forest means 30% or more tree canopy
+      in 2000. Boundaries: geoBoundaries gbOpen (OpenStreetMap-derived, CC BY-SA).
+      <strong>Limits:</strong> tree cover loss includes harvested plantations, shade-tree thinning and fire,
+      so a high value means "look closer", not "deforestation". Values do not include gain, and cocoa or oil palm
+      areas are not separated out. Areas are approximate.
+    </p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
